@@ -1,0 +1,24 @@
+<div>
+  <h2>Workout Tracker</h2>
+
+  <form>
+    <label for="workoutName">Workout Name:</label>
+    <input type="text" id="workoutName" [(ngModel)]="newWorkout.name" name="workoutName" required>
+
+    <label for="duration">Duration (minutes):</label>
+    <input type="number" id="duration" [(ngModel)]="newWorkout.duration" name="duration" required>
+
+    <label for="caloriesBurned">Calories Burned:</label>
+    <input type="number" id="caloriesBurned" [(ngModel)]="newWorkout.caloriesBurned" name="caloriesBurned" required>
+    <br>
+    <button type="button" (click)="addWorkout()">Add Workout</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let workout of workouts">
+      <p>Name: {{ workout.name }}</p>
+      <p>Duration: {{ workout.duration }} minutes</p>
+      <p>Calories Burned: {{ workout.caloriesBurned }}</p>
+    </li>
+  </ul>
+</div>
